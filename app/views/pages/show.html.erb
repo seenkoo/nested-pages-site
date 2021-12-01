@@ -1,0 +1,7 @@
+<% provide :page_title, @page.title %>
+
+<h1><%= @page.title %></h1>
+
+<%= @page.body.html_safe %>
+
+<%= nested_pages @page.descendants.arrange %>
