@@ -1,0 +1,33 @@
+<%= render 'shared/errors', object: @page %>
+
+<%= form_with model: @page do |f| %>
+  <%= f.hidden_field :parent_id, value: @page.parent_id %>
+  <div>
+    <div>
+      <%= f.label :name %>
+    </div>
+    <div>
+      <%= f.text_field :name, placeholder: 'Имя' %>
+    </div>
+  </div>
+
+  <div>
+    <div>
+      <%= f.label :title %>
+    </div>
+    <div>
+      <%= f.text_field :title, placeholder: 'Заголовок' %>
+    </div>
+  </div>
+
+  <div>
+    <div>
+      <%= f.label :body %>
+    </div>
+    <div>
+      <%= f.text_area :body %>
+    </div>
+  </div>
+
+  <%= f.submit 'Submit' %>
+<% end %>

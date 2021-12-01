@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   patch '/*slug', to: 'pages#update'
   put '/*slug', to: 'pages#update'
   delete '/*slug', to: 'pages#destroy'
-  post '/*slug', to: 'pages#create'
+  post '(/*slug)', to: 'pages#create'
 
   root 'pages#index'
 end
