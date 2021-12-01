@@ -2,6 +2,6 @@
 
 <h1><%= @page.title %></h1>
 
-<%= @page.body.html_safe %>
+<%= @page.formatted_body&.html_safe %>
 
 <%= nested_pages @page.descendants.arrange %>

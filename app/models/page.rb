@@ -1,4 +1,6 @@
 class Page < ApplicationRecord
+  include FormattableBody
+  
   has_ancestry
 
   validates :name, format: {
