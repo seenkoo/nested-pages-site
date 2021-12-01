@@ -1,15 +1,17 @@
 <%= render 'shared/errors', object: @page %>
 
 <%= form_with model: @page do |f| %>
-  <%= f.hidden_field :parent_id, value: @page.parent_id %>
-  <div>
+  <% if @page.new_record? %>
+    <%= f.hidden_field :parent_id, value: @page.parent_id %>
     <div>
-      <%= f.label :name %>
+      <div>
+        <%= f.label :name %>
+      </div>
+      <div>
+        <%= f.text_field :name, placeholder: 'Имя' %>
+      </div>
     </div>
-    <div>
-      <%= f.text_field :name, placeholder: 'Имя' %>
-    </div>
-  </div>
+  <% end %>
 
   <div>
     <div>
